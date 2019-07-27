@@ -84,6 +84,24 @@ class MainActivity : AppCompatActivity() {
         // 遅延 2000 2秒
         Handler().postDelayed(Runnable {
 
+            // bgmをならす
+
+            player = MediaPlayer.create(this,R.raw.bgm_beatalarm)
+            player.start();
+            player.isLooping =true
+
+            // ３種類のテキストをランダムに表示させる。
+            val t = Random.nextInt(3)
+
+            if (t == 0){
+                timerText.setText("今が起きる時")
+
+            }else if (t == 1){
+                timerText.setText("目覚めよ")
+            }else {
+                timerText.setText("おはよう")
+            }
+
 
 
         }, 2000)
@@ -156,7 +174,7 @@ class MainActivity : AppCompatActivity() {
 
         //外部に関数を持ってくる方法
         //button.setOnClickListener { onTapped() }
-
+/*
     fun onTapped() {
 
             //①画面遷移の登録
@@ -171,5 +189,5 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
-
+*/
 }
